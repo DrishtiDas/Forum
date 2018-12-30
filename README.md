@@ -1,0 +1,2 @@
+# Forum
+This website is aimed at developing online form for the group discussion. It is a web-based tool where any registered user can post the doubts and various subject related topics for other user doubt-solving. Since it is a webiste it can only be rendered within a browser. The most important feature of this website is that since there is an authenticated administrative right over the database any abusive or irrelevant content posted by users can be edited or deleted by the admin.
