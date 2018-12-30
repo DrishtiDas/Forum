@@ -1,0 +1,55 @@
+<html>
+<head><title>Register account </title></head>
+
+<body>
+
+<form action="register.php" method="POST">
+
+Username:<input type="text" name="username">
+<br /><br />Password:<input type="password" name="password">
+<br /><br />Confirm Password:<input type="password" name="repassword">
+<br /><br />Email:<input type="text" name="email">
+
+<br /><br /><input type="submit" name="submit" value="Register"> or <a href="login.php">Login</a> 
+
+</form> 	
+
+
+</body>
+
+</html>
+
+<?php
+
+$con = mysqli_connect('127.0.0.1', 'root', 'password');
+if(!$con)
+{
+  echo 'Not connected to Database';
+}
+
+if(!mysqli_select_db($con,'php_forum'))
+{
+  echo 'Database not selected';
+}
+
+
+$username=@$_POST['username'];
+$password=@$_POST['password'];
+$repass=@$_POST['repassword'];
+$email=@$_POST['email'];
+
+$sql="Insert into user(username, password, email) values('$username', '$password', '$email')" ;
+
+if(!mysqli_query($con,$sql))
+
+ {
+    echo 'Not Registered';
+  }
+
+else {  
+      
+      echo 'Registered';
+      }
+
+
+?>
